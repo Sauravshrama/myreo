@@ -75,7 +75,7 @@
 <div class="topnav" id="myTopnav">
   <a href="">Home</a>
   <a href="LoginPage">Login</a>
-  <a href="RegistrationPage">Register</a>
+  <a href="registerpage">Register</a>
   <a href="Aboutpage">About</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>

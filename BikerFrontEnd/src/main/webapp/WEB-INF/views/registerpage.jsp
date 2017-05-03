@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,45 +14,50 @@
             <h1>Register Customer</h1>
         </div>
 
-        <form:form action="${pageContext.request.contextPath}/register"
-                   method="post" commandName="user">
+        <form:form action="${applicationContext.request.contextPath}/registerpage"
+                   method="get" commandName="user">
 
-        <h3>Basic Info:</h3>
+        <h3>Basic Info:</h3>        
 
         <div class="form-group">
-            <label for="name">Name</label>
-            <form:errors path="customerName" cssStyle="color: #ff0000" />
-            <form:input path="customerName" id="name" class="form-Control" />
+            <label for="Email">Email</label>
+             <span style="color: #ff0000">${emailMsg}</span> 
+            <form:errors path="Email" cssStyle="color: #ff0000" />
+            <form:input path="Email" id="Email" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
-            <span style="color: #ff0000">${emailMsg}</span>
-            <form:errors path="customerEmail" cssStyle="color: #ff0000" />
-            <form:input path="customerEmail" id="email" class="form-Control" />
+            <label for="Phone">Phone</label>
+               <form:errors path="Phone" cssStyle="color: #ff0000" />
+            <form:input path="Phone" id="Phone" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <form:input path="customerPhone" id="phone" class="form-Control" />
+            <label for="Username">Username</label>
+             <span style="color: #ff0000">${usernameMsg}</span> 
+            <form:errors path="Username" cssStyle="color: #ff0000" />
+            <form:input path="Username" id="Username" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="username">Username</label>
-            <span style="color: #ff0000">${usernameMsg}</span>
-            <form:errors path="username" cssStyle="color: #ff0000" />
-            <form:input path="username" id="username" class="form-Control" />
+            <label for="Password">Password</label>
+            <form:errors path="Password" cssStyle="color: #ff0000" />
+            <form:password path="Password" id="Password" class="form-Control" />
         </div>
 
+    <div class="form-group">
+            <label for="CPassword">Password</label>
+            <form:errors path="CPassword" cssStyle="color: #ff0000" />
+            <form:password path="CPassword" id="CPassword" class="form-Control" />
+        </div>
+        
         <div class="form-group">
-            <label for="password">Password</label>
-            <form:errors path="password" cssStyle="color: #ff0000" />
-            <form:password path="password" id="password" class="form-Control" />
+            <label for="Location">Password</label>
+            <form:errors path="Location" cssStyle="color: #ff0000" />
+            <form:password path="Location" id="Location" class="form-Control" />
         </div>
-
-
         <br/>
-
+<%-- 
         <h3>Billing Address:</h3>
 
         <div class="form-group">
@@ -116,7 +122,7 @@
         <div class="form-group">
             <label for="shippingZip">Zipcode</label>
             <form:input path="shippingAddress.zipCode" id="shippingZip" class="form-Control" />
-        </div>
+        </div> --%>
 
         <br/><br/>
 

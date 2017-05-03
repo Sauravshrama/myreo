@@ -1,31 +1,37 @@
 package com.niit.Model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.Email;
 
 @Entity
 
-public class User{
+public class User implements Serializable{
 	
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 
 private int Id;
 
+	@NotEmpty (message = "The customer name must not be null")
 private String Username;
 
+	@NotEmpty (message = "The customer password must not be null")
 private String Password;
 
+	@NotEmpty (message = "The customer password must not be null")
 private String CPassword;
 
+@NotEmpty (message = "The customer email must not be null")
 private String Email;
 
+@NotEmpty (message = "The phone must not be null")
 private String Phone;
 
+@NotEmpty (message = "The customer location must not be null")
 private String Location;
 
 private int Role = 1;
@@ -40,7 +46,7 @@ public void setId(int id) {
 	Id = id;
 }
 
-@NotEmpty(message="This field is mandatory")
+
 public String getUsername() {
 	return Username;
 }
@@ -49,7 +55,7 @@ public void setUsername(String username) {
 	Username = username;
 }
 
-@NotEmpty(message="This field is mandatory")
+
 public String getPassword() {
 	return Password;
 }
@@ -58,7 +64,7 @@ public void setPassword(String password) {
 	Password = password;
 }
 
-@NotEmpty(message="This field is mandatory")
+
 public String getCPassword() {
 	return CPassword;
 }
@@ -67,8 +73,7 @@ public void setCPassword(String cPassword) {
 	CPassword = cPassword;
 }
 
-@NotEmpty(message="This field is mandatory")
-@Email(message="Invalid email format")
+
 public String getEmail() {
 	return Email;
 }
@@ -77,8 +82,7 @@ public void setEmail(String email) {
 	Email = email;
 }
 
-@Pattern(message="Phone Number must be a valid 10 Digit Mobile Number",regexp="^[987][0-9]{9}$")
-@NotEmpty(message="This field is mandatory")
+
 public String getPhone() {
 	return Phone;
 }
@@ -87,7 +91,7 @@ public void setPhone(String phone) {
 	Phone = phone;
 }
 
-@NotEmpty(message="This field is mandatory")
+
 public String getLocation() {
 	return Location;
 }
@@ -112,7 +116,7 @@ public void setActive(boolean active) {
 	Active = active;
 }
 
-public static void setEnabled(boolean b) {
+public void setEnabled(boolean b) {
 	// TODO Auto-generated method stub
 	
 }

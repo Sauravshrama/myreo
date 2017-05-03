@@ -26,13 +26,13 @@ public class HomeController {
 		return "Login";
 	}
 	
-	@RequestMapping("/RegistrationPage")
+	/*@RequestMapping("/RegistrationPage")
 	public String registrationPage(Model model)
 	{
 		model.addAttribute("isUserClickedRegister", "true");
 		
-		return "Register";
-	}
+		return "registerpage";
+	}*/
 	
 	/*@RequestMapping("/RegPage")
 	public String RegistrationPage(Model model)

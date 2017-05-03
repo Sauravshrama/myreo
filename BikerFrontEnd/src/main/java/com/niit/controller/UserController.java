@@ -21,11 +21,11 @@ public class UserController {
 	UserService us;
 	
 
-@RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registerCustomerPost(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
+@RequestMapping(value = "/registerpage", method = RequestMethod.GET)
+    public String registerCustomerGet(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
 
         if(result.hasErrors()){
-            return "registerCustomer";
+            return "registerpage";
         
         }
         List<User> customerList = us.listAll();
@@ -34,19 +34,19 @@ public class UserController {
             if(user.getEmail().equals(customerList.get(i).getUserEmail())){
                 model.addAttribute("emailMsg", "Email already exists");
 
-                return "registerCustomer";
+                return "registerpage";
             }
 
             if(user.getUsername().equals(customerList.get(i).getUsername())){
                 model.addAttribute("usernameMsg", "Username already exists");
 
-                return "registerCustomer";
+                return "registerpage";
             }
         }
 
-        User.setEnabled(true);
-        us.getUser(user);
-        return "registerCustomerSuccess";
+        user.setEnabled(true);
+        us.insert(user);
+        return "registerpage";
     }
 
 }// The End of Class;
