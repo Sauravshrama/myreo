@@ -2,12 +2,10 @@ package com.niit.Service;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Transactional;
+import com.niit.DAO.UserDAO;
+import com.niit.Model.User;
 
 @Service
 public class UserServiceImplement implements UserService{
@@ -35,6 +33,12 @@ public class UserServiceImplement implements UserService{
 	public List<User> listAll() {
 		
 		return udao.listAll();
+	}
+
+	@Override
+	public User getUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

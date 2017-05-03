@@ -1,17 +1,10 @@
 package com.niit.Model;
 
-import java.io.Serializable;
-
-import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Email;
 
@@ -117,6 +110,16 @@ public boolean isActive() {
 
 public void setActive(boolean active) {
 	Active = active;
+}
+
+public static void setEnabled(boolean b) {
+	// TODO Auto-generated method stub
+	
+}
+
+public Object getUserEmail() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 

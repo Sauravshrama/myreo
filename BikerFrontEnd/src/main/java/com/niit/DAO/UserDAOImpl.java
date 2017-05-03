@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.Model.User;
+
 @Repository
 @EnableTransactionManagement
 public class UserDAOImpl implements UserDAO{
@@ -33,6 +35,7 @@ public class UserDAOImpl implements UserDAO{
 	@Transactional
 	public User getUser(int pid) {
 		
+		@SuppressWarnings("unchecked")
 		List<User> list = sessionFactory.getCurrentSession().createQuery("from User p where p.id = :id").setInteger("id", pid).list();
 		
 		if( !list.isEmpty() )
@@ -44,6 +47,7 @@ public class UserDAOImpl implements UserDAO{
 	@Transactional
 	public List<User> listAll() {
 		
+		@SuppressWarnings("unchecked")
 		List<User> list = sessionFactory.getCurrentSession().createQuery("from User p").list();
 		
 		return list;

@@ -1,5 +1,7 @@
-package com.thisissporta.user;
+package com.niit.DAO;
 import java.util.List;
+
+import com.niit.Model.*;
 
 public interface UserDAO
 {

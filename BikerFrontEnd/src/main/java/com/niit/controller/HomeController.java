@@ -34,6 +34,14 @@ public class HomeController {
 		return "Register";
 	}
 	
+	/*@RequestMapping("/RegPage")
+	public String RegistrationPage(Model model)
+	{
+		model.addAttribute("isUserClickedRegister", "true");
+		
+		return "register";
+	}*/
+	
 	@RequestMapping("/Aboutpage")
 	public String aboutPage(Model model)
 	{
